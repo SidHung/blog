@@ -10,13 +10,16 @@ class HomeController extends Controller
 	{
 		$name = 'Sid';
 		$age = 23;
-		$tasks = [
-			'吃飯',
-			'睡覺',
-			'顆顆'
-		];
-		return view('welcome', 
-			compact('name','age', 'tasks'));
+		// $tasks = [
+		// 	'吃飯',
+		// 	'睡覺',
+		// 	'顆顆'
+		// ];
+
+		$tasks = \DB::table('tasks')->get();
+
+		// dd($tasks);
+		return view('welcome', compact('name','age', 'tasks'));
 	}
     
 }

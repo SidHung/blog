@@ -8,9 +8,9 @@
   <p>You age is : {{$age}} </p>
   要做der事：
   <ul>
-  		<?php foreach ($tasks as $task_name):?>
-  			<li> <?php echo $task_name;?> </li>
-  		<?php endforeach ?>
+  		@foreach ($tasks as $task_object)
+  			<li> {{ $task_object->name }} </li>
+  		@endforeach 
   </ul>		
 </body>
 </html>
