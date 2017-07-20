@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Task;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,7 +17,10 @@ class HomeController extends Controller
 		// 	'顆顆'
 		// ];
 
-		$tasks = \DB::table('tasks')->get();
+		// $tasks = \DB::table('tasks')
+		// 	->where('is_completed', 0)
+		// 	->get();
+		$tasks = Task::get();
 
 		// dd($tasks);
 		return view('welcome', compact('name','age', 'tasks'));
