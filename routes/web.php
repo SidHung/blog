@@ -158,8 +158,8 @@ Route::get('/about', function  () {
 // 	//echo $member[2];
 // });
 
-route::get('/', 'HomeController@index');
+route::get('task', 'TaskController@index');
 
-route::get('/task/{id}', 'HomeController@show');
+route::get('/task/{id}', 'TaskController@show');
 
 
