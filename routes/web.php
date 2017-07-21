@@ -160,4 +160,6 @@ Route::get('/about', function  () {
 
 route::get('/', 'HomeController@index');
 
+route::get('/task/{id}', 'HomeController@show');
+
 

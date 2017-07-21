@@ -9,7 +9,12 @@
   要做der事：
   <ul>
   		@foreach ($tasks as $task_object)
-  			<li> {{ $task_object->name }} </li>
+  			<li>
+  				<a href="/task/{{ $task_object->id }}">
+					 {{ $task_object->name }} 
+				</a>
+  			</li>
+  			
   		@endforeach 
   </ul>		
 </body>
