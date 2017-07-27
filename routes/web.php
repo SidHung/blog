@@ -160,6 +160,10 @@ Route::get('/about', function  () {
 
 Route::get('task', 'TaskController@index');
 
+Route::get('task/create', 'TaskController@create');
+
+Route::post('task', 'TaskController@Store');
+
 Route::get('/task/{id}', 'TaskController@show');
 
 Route::get('articles','ArticlesController@index');

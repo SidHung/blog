@@ -25,9 +25,28 @@ class TaskController extends Controller
 		// dd($tasks);
 		return view('task.index', compact('name','age', 'tasks'));
 	}
+	public function create()
+	{
+		// 建立一個變數 task，值是到 tasks table 抓回該 id 的資料
+		return view('task.create');
+	}	
+
+	public function store()
+	{
+		// 在 tasks table 新增一筆資料
+		Task::create([
+			// name 的欄位，要使用form 裡面的 name 輸入框的值
+			'name' => request()->input('name'),
+			// description 的欄位，要使用form 裡面的 description 輸入框的值
+			'description' => request()->input('description')
+		]);
+		// 回到 tasks 列表頁面
+		return redirect()->to('/task');
+	}
     
-    public function show($id)
+    public function show($id) // 接收從 routes/web.php 設定的 id
     {
+    	// 建立一個變數 task，值是到 task
     	$task = Task::find($id);
 
     	return view('task.show')->with(compact('task'));

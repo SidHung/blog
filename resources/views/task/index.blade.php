@@ -6,6 +6,11 @@
 <body>
   <h1>Hello, {{ $name}}</h1>
   <p>You age is : {{$age}} </p>
+
+  <a href="/task/create">新增一件家事yayaya</a>
+  <br>
+  <br>
+
   要做der事：
   <ul>
   		@foreach ($tasks as $task_object)
