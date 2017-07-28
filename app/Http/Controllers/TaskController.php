@@ -43,7 +43,30 @@ class TaskController extends Controller
 		// 回到 tasks 列表頁面
 		return redirect()->to('/task');
 	}
-    
+	public function edit($id) // 接收從 routes/web.php 設定的 id
+    {
+    	// 建立一個變數 task，值是到 task
+    	$task = Task::find($id);
+
+    	return view('task.edit')->with(compact('task'));
+    }
+    public function update($id)
+	{
+		// 建立一個變數 task ，值是到 tasks table 抓回該 id 的資料
+		$task = Task::find($id);
+
+		// 把該筆資料的欄位，更新成來自表單的資料，並寫入到 tasks table
+		$task->update([
+			// name 的欄位，要使用form 裡面的 name 輸入框的值
+			'name' => request()->input('name'),
+			// description 的欄位，要使用form 裡面的 description 輸入框的值
+			'description' => request()->input('description')
+		]);
+
+		// 回到 tasks 列表頁面
+		return redirect()->to('/task');
+
+    }
     public function show($id) // 接收從 routes/web.php 設定的 id
     {
     	// 建立一個變數 task，值是到 task

@@ -12,15 +12,31 @@
   <br>
 
   要做der事：
-  <ul>
+  <table>
+    <thead>
+      <tr>
+          <th style="text-align:left">ID</th>
+          <th style="text-align:left">名稱</th>          
+          <th style="text-align:left">操作</th>
+      </tr>    
+    </thead>   
+    <tbody>   
   		@foreach ($tasks as $task_object)
-  			<li>
-  				<a href="/task/{{ $task_object->id }}">
-					 {{ $task_object->name }} 
-				</a>
-  			</li>
-  			
-  		@endforeach 
-  </ul>		
+  			<tr>
+            <td>{{ $task_object->id }}</td>
+            <td>
+                <a href="/task/{{ $task_object->id }}">
+					           {{ $task_object->name }}</a>
+            </td> 
+            <td>
+                <a href="/task/{{ $task_object->id }}/edit">
+                修改</a>
+                <a href="#">
+                刪除</a>
+            </td>
+  	   </tr>
+  		@endforeach
+    </tbody>  
+ 	</table>
 </body>
 </html>
