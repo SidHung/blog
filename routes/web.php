@@ -168,12 +168,20 @@ Route::get('task/{id}/edit', 'TaskController@edit');
 
 Route::put('task/{id}', 'TaskController@update');
 
+Route::delete('task/{id}', 'TaskController@destroy');
+
 Route::get('/task/{id}', 'TaskController@show');
 
-
-
-
+//我只是個分隔線
 
 Route::get('articles','ArticlesController@index');
+
+Route::get('articles/create', 'ArticlesController@create');
+
+Route::post('articles', 'ArticlesController@store');
+
+Route::get('articles/{id}/edit', 'ArticlesController@edit');
+
+Route::put('articles/{id}', 'ArticlesController@update');
 
 Route::get('/articles/{id}','ArticlesController@show');

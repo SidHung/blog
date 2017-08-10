@@ -65,8 +65,16 @@ class TaskController extends Controller
 
 		// 回到 tasks 列表頁面
 		return redirect()->to('/task');
+	}
 
-    }
+	public function destroy($id)
+    {
+    	$task = Task::find($id);
+
+    	$task->delete();
+    	return redirect()->to('/task');
+   	}
+    
     public function show($id) // 接收從 routes/web.php 設定的 id
     {
     	// 建立一個變數 task，值是到 task

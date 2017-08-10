@@ -21,7 +21,23 @@ class ArticlesController extends Controller
 		// 回傳 view : task/index.blade.php，並回以上的變數們
 		return view('articles.index', compact('id','name', 'articles'));
 	}
-    
+    public function create()
+    {
+    	return view('articles.create');
+    }
+    public function store()
+    {
+    	Articles::create([
+    		'id' => request()->input('id'),
+    		'content' => request()->input('content')
+    	]);
+    	return redirect()->to('/articles');
+    }
+    public function edit($id)
+    {
+    	$articles = Articles::find($id);
+    	return view('articles.edit')->with(compact('articles'));
+    }
     public function show($id) // 接收從routes/web.php 設定的 id
     {
     	//建立一個變數，值是依照 id，到 articles table 抓回該id 的資料
