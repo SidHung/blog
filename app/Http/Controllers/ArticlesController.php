@@ -38,6 +38,21 @@ class ArticlesController extends Controller
     	$articles = Articles::find($id);
     	return view('articles.edit')->with(compact('articles'));
     }
+    public function update($id)
+    {
+        $articles = Articles::find($id);
+
+        // 把該筆資料的欄位，更新成來自表單的資料，並寫入到 tasks table
+        $articles->update([
+            // name 的欄位，要使用form 裡面的 name 輸入框的值
+            'id' => request()->input('id'),
+            // description 的欄位，要使用form 裡面的 description 輸入框的值
+            'content' => request()->input('content')
+        ]);
+
+        // 回到 tasks 列表頁面
+        return redirect()->to('/articles');
+    }
     public function show($id) // 接收從routes/web.php 設定的 id
     {
     	//建立一個變數，值是依照 id，到 articles table 抓回該id 的資料

@@ -21,15 +21,15 @@
       </tr>    
     </thead>  
     <tbody>
-      @foreach ($articles as $articles_object)
+      @foreach ($articles as $article_object)
         <tr>
-            <td>{{ $articles_object->id }}</td>
+            <td>{{ $article_object->id }}</td>
             <td>
-                <a href="/articles/{{ $articles_object->id }}">
-                     {{ $articles_object->content }}</a>
+                <a href="/articles/{{ $article_object->id }}">
+                     {{ $article_object->content }}</a>
             </td>         
             <td>
-                <a href="/articles/{{ $articles->id }}/edit">
+                <a href="/articles/{{ $article_object->id }}/edit">
                 編輯</a>
                 <a href="#">
                 刪除</a>

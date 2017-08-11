@@ -1,15 +1,15 @@
 <h1>編輯文章頁面</h1>
 
-<form method="POST" action="/articles/{{ $task->id }}">
+<form method="POST" action="/articles/{{ $articles->id }}">
 	{{ csrf_field() }}
 
 	{{ method_field('put') }}
 
 	<h4>文章序號：</h4>
-	<input type="text" name="id">
+	<input type="text" name="id" value="{{ $articles->id }}">
 
 	<h4>內容：</h4>
-	<input type="text" name="content">
+	<input type="text" name="content" value="{{ $articles->content }}">
 
 	<br>
 	<br>
