@@ -187,3 +187,13 @@ Route::put('articles/{id}', 'ArticlesController@update');
 Route::delete('articles/{id}', 'ArticlesController@destroy');
 
 Route::get('/articles/{id}','ArticlesController@show');
+
+//我是分隔線
+
+Route::get('category', 'CategoryController@index');
+
+Route::get('category/create', 'CategoryController@create');
+
+Route::post('category', 'CategoryController@store');
+
+
