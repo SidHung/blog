@@ -53,6 +53,13 @@ class ArticlesController extends Controller
         // 回到 tasks 列表頁面
         return redirect()->to('/articles');
     }
+    public function destroy($id)
+    {
+        $articles = Articles::find($id);
+
+        $articles->delete();
+        return redirect()->to('/articles'); 
+    }
     public function show($id) // 接收從routes/web.php 設定的 id
     {
     	//建立一個變數，值是依照 id，到 articles table 抓回該id 的資料

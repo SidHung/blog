@@ -29,10 +29,14 @@
                      {{ $article_object->content }}</a>
             </td>         
             <td>
-                <a href="/articles/{{ $article_object->id }}/edit">
-                編輯</a>
-                <a href="#">
-                刪除</a>
+                <form method="POST" action="/articles/{{ $article_object->id }}">
+                 <a href="/articles/{{ $article_object->id }}/edit"> 修改
+                 </a>
+                {{ csrf_field() }}
+                {{ method_field('delete') }}
+                <button type="submit"/> 刪除
+                </button>
+                </form>
             </td>
         </tr>
       @endforeach   

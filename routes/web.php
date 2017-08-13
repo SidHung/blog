@@ -184,4 +184,6 @@ Route::get('articles/{id}/edit', 'ArticlesController@edit');
 
 Route::put('articles/{id}', 'ArticlesController@update');
 
+Route::delete('articles/{id}', 'ArticlesController@destroy');
+
 Route::get('/articles/{id}','ArticlesController@show');
