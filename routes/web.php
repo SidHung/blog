@@ -196,4 +196,12 @@ Route::get('category/create', 'CategoryController@create');
 
 Route::post('category', 'CategoryController@store');
 
+Route::get('category/{id}/edit', 'CategoryController@edit');
+
+Route::put('category/{id}', 'CategoryController@update');
+
+Route::delete('category/{id}', 'CategoryController@destroy');
+
+Route::get('category/{id}', 'CategoryController@show');
+
 

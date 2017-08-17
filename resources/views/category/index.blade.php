@@ -55,9 +55,9 @@
   <table class="table table-responsive">
     <thead>
       <tr>
-          <th style="text-align:left">序號</th>
-          <th style="text-align:left">名稱</th>          
-          <th style="text-align:left">編輯</th>
+          <th style="text-align:left">分類名稱</th>
+          <th style="text-align:left">序號</th>          
+          <th style="text-align:left">編輯功能</th>
       </tr>    
     </thead>   
     <tbody>   
@@ -65,13 +65,13 @@
   			<tr>
             <td>{{ $category_object->heading }}</td>
             <td>
-                <a href="/category/{{ $category_object->heading }}">
+                <a href="/category/{{ $category_object->id }}">
 					           {{ $category_object->queue }}</a>
             </td> 
             <td>
                
-                <form method="POST" action="/category/{{ $category_object->heading }}">
-                 <a href="/category/{{ $category_object->heading }}/edit" class="btn btn-warning">
+                <form method="POST" action="/category/{{ $category_object->id }}">
+                 <a href="/category/{{ $category_object->id }}/edit" class="btn btn-warning">
                 <i class="fa fa-pencil"></i> 修改
                 </a>
                 {{ csrf_field() }}

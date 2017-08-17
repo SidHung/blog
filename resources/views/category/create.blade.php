@@ -6,12 +6,14 @@
 	<h4>id </h4>
 	<input type="text" name="id">
 
-
-	<h4>標籤名稱：</h4>
+	<h4>分類名稱：</h4>
 	<input type="text" name="heading">
 
-	<h4>排序：</h4>
+	<h4>權重級數：</h4>
 	<input type="text" name="queue">
+
+	<h4>分類詳細敘述：</h4>
+	<input type="text" name="description">
 
 	<br>
 	<br>

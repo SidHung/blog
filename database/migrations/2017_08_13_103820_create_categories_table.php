@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('heading');
             $table->integer('queue');
+            $table->string('description');
             $table->timestamps();
         });
     }

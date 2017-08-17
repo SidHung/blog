@@ -39,40 +39,46 @@ class CategoryController extends Controller
 			// name 的欄位，要使用form 裡面的 name 輸入框的值
 			'heading' => request()->input('heading'),
 			// description 的欄位，要使用form 裡面的 description 輸入框的值
-			'queue' => request()->input('queue')
+			'queue' => request()->input('queue'),
+			'description' => request()->input('description')
 		]);
 		// 回到 tasks 列表頁面
 		return redirect()->to('/category');
 	}
-	public function edit($heading) // 接收從 routes/web.php 設定的 id
+	public function edit($id) // 接收從 routes/web.php 設定的 id
     {
     	// 建立一個變數 task，值是到 task
-    	$category = Category::find($heading);
-
+    	// $category = Category::where('heading', $heading)->first();
+    	// $category = Category::where('id', $id)->first();下面那行等於這行
+    	$category = Category::find($id);
+    	// dd($category);
     	return view('category.edit')->with(compact('category'));
+
+
     }
-    public function update($heading)
+    public function update($id)
 	{
 		// 建立一個變數 task ，值是到 tasks table 抓回該 id 的資料
-		$category = Category::find($heading);
+		$category = Category::find($id);
 
 		// 把該筆資料的欄位，更新成來自表單的資料，並寫入到 tasks table
 		$category->update([
 			// name 的欄位，要使用form 裡面的 name 輸入框的值
 			'heading' => request()->input('heading'),
 			// description 的欄位，要使用form 裡面的 description 輸入框的值
-			'queue' => request()->input('queue')
+			'queue' => request()->input('queue'),
+			'description' => request()->input('description')
 		]);
 
 		// 回到 tasks 列表頁面
 		return redirect()->to('/category');
 	}
 
-	public function destroy($heading)
+	public function destroy($id)
     {
-    	$category = Category::find($heading);
-
+    	$category = Category::find($id);
     	$category->delete();
+
     	return redirect()->to('/category');
    	}
     
