@@ -1,15 +1,28 @@
-<h1>新增家事表單</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		@include('partial.head')
+	</head>
+<body>
+	@include('partial.navbar')
+	<div class="container">
 
-<form method="POST" action="/task">
-	{{ csrf_field() }}
+	<h1>新增家事表單</h1>
 
-	<h4>名稱：</h4>
-	<input type="text" name="name">
+		<form method="POST" action="/task">
+			{{ csrf_field() }}
 
-	<h4>敘述：</h4>
-	<input type="text" name="description">
+			<h4>名稱：</h4>
+			<input type="text" name="name">
 
-	<br>
-	<br>
-	<input type="submit" value="送出">
-</form>
+			<h4>敘述：</h4>
+			<input type="text" name="description">
+
+			<br>
+			<br>
+			<input type="submit" value="送出">
+		</form>
+	</div>
+	@include('partial.script')
+</body>
+</html>

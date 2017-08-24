@@ -1,5 +1,7 @@
-<h1>修改家事表單</h1>
+@extends('layout')
 
+@section('content')
+<h1>修改家事表單</h1>
 <form method="POST" action="/task/{{ $task->id }}">
 	{{-- CSRF token，防止來自外部的表單送資料進來 --}}
 	{{ csrf_field() }}
@@ -9,13 +11,15 @@
 	{{ method_field('put') }}
 
 	<h4>名稱：</h4>
-	<input type="text" name="name" value="{{ $task->name }}">
+	<input type="text" name="name" value="{{ $task->name }}" class="form-control">
 
 	<h4>敘述：</h4>
-	<input type="text" name="description" value=" {{ $task->
-	    description }}">
+	<textarea type="text" name="description" value=" {{ $task->
+	    description }}" class="form-control">
+	</textarea>
 
 	<br>
 	<br>
 	<input type="submit" value="送出">
 </form>
+@endsection
