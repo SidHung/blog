@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-  <h1>Hello, {{ $id}}</h1>
+@extends('layout')
+
+@section('content')
+  <h1 class="page-header">文章管理</h1>
+  <p>Hello, {{ $id}} </p>
   <p>文章標題 : {{$name}} </p>
 
-  <a href="/articles/create">每天寫文章，頭腦好棒棒</a>
+  <a href="/articles/create" class="btn btn-primary">新增</a>
   <br>
   <br>
 
@@ -42,5 +40,4 @@
       @endforeach   
     </tbody>
   </table>	
-</body>
-</html>
+@endsection

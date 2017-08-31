@@ -2,9 +2,23 @@
 
 @section('content')
 <h1 class="page-header">家事管理</h1>
-
-<a href="/task/create" class="btn btn-success">
-<i class="fa fa-plus"></i> 新增</a>
+<div class="row">
+  <div class="col-xs-8">
+    <a href="/task/create" class="btn btn-success">
+      <i class="fa fa-plus"></i> 新增
+    </a>
+  </div>
+   <div class="col-xs-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+          <i class="fa fa-search"> </i>&nbsp;
+        </button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 <br>
 <br>
 
