@@ -34,12 +34,16 @@ class TaskController extends Controller
 	public function store()
 	{
 		// 在 tasks table 新增一筆資料
-		Task::create([
-			// name 的欄位，要使用form 裡面的 name 輸入框的值
-			'name' => request()->input('name'),
-			// description 的欄位，要使用form 裡面的 description 輸入框的值
-			'description' => request()->input('description')
-		]);
+
+		// Task::create([
+		// 	// name 的欄位，要使用form 裡面的 name 輸入框的值
+		// 	'name' => request()->input('name'),
+		// 	// description 的欄位，要使用form 裡面的 description 輸入框的值
+		// 	'description' => request()->input('description')
+		// ]);
+
+		Task::create(request()->input());
+
 		// 回到 tasks 列表頁面
 		return redirect()->to('/task');
 	}
@@ -54,15 +58,14 @@ class TaskController extends Controller
 	{
 		// 建立一個變數 task ，值是到 tasks table 抓回該 id 的資料
 		$task = Task::find($id);
-
 		// 把該筆資料的欄位，更新成來自表單的資料，並寫入到 tasks table
-		$task->update([
-			// name 的欄位，要使用form 裡面的 name 輸入框的值
-			'name' => request()->input('name'),
-			// description 的欄位，要使用form 裡面的 description 輸入框的值
-			'description' => request()->input('description')
-		]);
-
+		// $task->update([
+		// 	// name 的欄位，要使用form 裡面的 name 輸入框的值
+		// 	'name' => request()->input('name'),
+		// 	// description 的欄位，要使用form 裡面的 description 輸入框的值
+		// 	'description' => request()->input('description')
+		// ]);
+		$task->update(request()->input());
 		// 回到 tasks 列表頁面
 		return redirect()->to('/task');
 	}
