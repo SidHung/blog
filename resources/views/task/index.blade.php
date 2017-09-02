@@ -8,7 +8,7 @@
       <i class="fa fa-plus"></i> 新增
     </a>
   </div>
-   <div class="col-xs-4">
+ {{--   <div class="col-xs-4">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search for...">
       <span class="input-group-btn">
@@ -16,8 +16,16 @@
           <i class="fa fa-search"> </i>&nbsp;
         </button>
       </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+    </div><!-- /input-group --> 
+  </div><!-- /.col-lg-6 --> --}}
+  <form class="input-group" method="GET" action="/task">
+      <input type="text" class="form-control" placeholder="請輸入家事名稱" name="keyword" value={{$keyword}}>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-search fa-tw"></i>
+          </button>
+        </span>
+  </form><!-- /input-group -->
 </div><!-- /.row -->
 <br>
 <br>

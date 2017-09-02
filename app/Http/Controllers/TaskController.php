@@ -77,6 +77,22 @@ class TaskController extends Controller
     	$task->delete();
     	return redirect()->to('/task');
    	}
+   	//搜尋：用變數$keyword,來接收我們輸入的關鍵字
+    public function search($id)
+    	$keyword = request()->input('keyword');
+    	if ($keyword ==''){
+        //如果keyword的值是空的字串,就不篩選
+        $tasks = Task::get();
+    }
+     	
+        else{ //不是的話就
+      //從task table中,找出name欄位值為$keyword的資料
+      	$tasks = Task::where('name', $keyword)->get();
+    }
+    return view('task.index',compact('name','age','tasks','keyword'));
+    
+
+      	
     
     public function show($id) // 接收從 routes/web.php 設定的 id
     {
