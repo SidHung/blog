@@ -18,14 +18,14 @@
       </span>
     </div><!-- /input-group --> 
   </div><!-- /.col-lg-6 --> --}}
-  <form class="input-group" method="GET" action="/task">
-      <input type="text" class="form-control" placeholder="請輸入家事名稱" name="keyword" value={{$keyword}}>
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <i class="fa fa-search fa-tw"></i>
-          </button>
-        </span>
-  </form><!-- /input-group -->
+    <form class="input-group" method="GET" action="/task">
+        <input type="text" class="form-control" placeholder="請輸入家事名稱" name="keyword" value={{$keyword}}>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <i class="fa fa-search fa-tw"></i>
+            </button>
+          </span>
+    </form><!-- /input-group -->
 </div><!-- /.row -->
 <br>
 <br>
@@ -68,5 +68,5 @@
 	   </tr>
 		@endforeach
   </tbody>  
-	</table>
+</table>
 @endsection
