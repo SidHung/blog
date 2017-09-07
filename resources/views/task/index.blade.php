@@ -16,13 +16,13 @@
           <i class="fa fa-search"> </i>&nbsp;
         </button>
       </span>
-    </div><!-- /input-group --> 
+    </div><!-- /input-group -->
   </div><!-- /.col-lg-6 --> --}}
     <form class="input-group" method="GET" action="/task">
         <input type="text" class="form-control" placeholder="請輸入家事名稱" name="keyword" value={{$keyword}}>
           <span class="input-group-btn">
             <button class="btn btn-default" type="button">
-              <i class="fa fa-search fa-tw"></i>
+              <i class="fa fa-search fa-tw"></i>&nbsp;
             </button>
           </span>
     </form><!-- /input-group -->
@@ -35,20 +35,20 @@
   <thead>
     <tr>
         <th style="text-align:left">序號</th>
-        <th style="text-align:left">名稱</th>          
+        <th style="text-align:left">名稱</th>
         <th style="text-align:left">操作</th>
-    </tr>    
-  </thead>   
-  <tbody>   
+    </tr>
+  </thead>
+  <tbody>
 		@foreach ($tasks as $task_object)
 			<tr>
           <td>{{ $task_object->id }}</td>
           <td>
               <a href="/task/{{ $task_object->id }}">
 				           {{ $task_object->name }}</a>
-          </td> 
+          </td>
           <td>
-             
+
               <form method="POST" action="/task/{{ $task_object->id }}">
                <a href="/task/{{ $task_object->id }}/edit" class="btn btn-warning">
               <i class="fa fa-pencil"></i> 修改
@@ -67,6 +67,6 @@
           </td>
 	   </tr>
 		@endforeach
-  </tbody>  
+  </tbody>
 </table>
 @endsection
