@@ -48,12 +48,12 @@ class TaskController extends Controller
     {
         // 在 tasks table 新增一筆資料
 
-        // Task::create([
-        //  // name 的欄位，要使用form 裡面的 name 輸入框的值
-        //  'name' => request()->input('name'),
-        //  // description 的欄位，要使用form 裡面的 description 輸入框的值
-        //  'description' => request()->input('description')
-        // ]);
+        Task::create([
+            // name 的欄位，要使用form 裡面的 name 輸入框的值
+            'name' => request()->input('name'),
+            // description 的欄位，要使用form 裡面的 description 輸入框的值
+            'description' => request()->input('description')
+        ]);
 
         Task::create(request()->input());
 
