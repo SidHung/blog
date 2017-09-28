@@ -20,7 +20,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://scontent.ftpe8-3.fna.fbcdn.net/v/t1.0-9/14055159_1236147206418167_1925319583161016240_n.jpg?oh=556b59189bffd7283f0fc49e1ccbbeb0&oe=5A2898D1" style="height: 20px" class="img-circle">  Sid <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://scontent.ftpe8-3.fna.fbcdn.net/v/t1.0-9/14055159_1236147206418167_1925319583161016240_n.jpg?oh=556b59189bffd7283f0fc49e1ccbbeb0&oe=5A2898D1" style="height: 20px" class="img-circle"> {{ auth()->user()->email }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
