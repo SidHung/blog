@@ -7,19 +7,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4">會員登入</div>
+        <div class="col-md-4">會員註冊</div>
         <div class="col-md-4"></div>
       </div>
 
-      <form method="POST" action="/login">
+      <form method="POST" action="/register">
         Email:
         <input class="form-control" type="text" name="email">
 
         Password:
         <input class="form-control" type="password" name="password">
 
-        <input type="submit" class="btn btn-primary" value="登入">
-        <div class="text-center">還不是會員嗎？<a href="/register">點此註冊</a>
+        <input type="submit" class="btn btn-primary" value="註冊">
 
         {{ csrf_field() }}
       </form>

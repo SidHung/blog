@@ -14,6 +14,12 @@ Route::get('login', 'LoginController@showLoginForm');
 
 Route::post('login', 'LoginController@authenticate');
 
+Route::get('logout', 'LoginController@logout');
+
+Route::get('register', 'LoginController@showRegistrationForm');
+
+Route::post('register', 'LoginController@createUser');
+
 Route::resource('task', 'TaskController');
 
 // Route::get('task', 'TaskController@index');
